@@ -1,0 +1,9 @@
+# Development Requirements
+
+# Testing
+pytest
+pytest-cov
+
+# Linting
+flake8
+black
