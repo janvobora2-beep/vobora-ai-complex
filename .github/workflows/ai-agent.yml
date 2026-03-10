@@ -1,0 +1,27 @@
+name: AI Agent
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  ai-agent:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install AI tools
+        run: |
+          pip install crewai
+          pip install aider-chat
+
+      - name: Run AI agent
+        run: python crew.py
